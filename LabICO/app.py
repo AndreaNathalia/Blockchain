@@ -13,12 +13,12 @@ def main():
         frm = str(request.form['account'])
         to = '0xdbf0fed49a2c92ab32cb039752a75c09ab827c71'
         pk = str(request.form['pk'])
+        amount = request.form['amount']
 
         webAddFrm = web3.toChecksumAddress(frm)
         webAddTo = web3.toChecksumAddress(to)
 
         nonce = web3.eth.getTransactionCount(webAddFrm)
-        amount = request.form['amount']
 
         trns = {
             'nonce': nonce,
